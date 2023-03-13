@@ -40,6 +40,22 @@
     <build>
         <finalName>maven-static-code-analysis</finalName>
         <plugins>
+                 
+                 <plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>8.1.2</version>
+				 <configuration>
+                  <formats>JSON,HTML</formats>
+              </configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -63,5 +79,31 @@
             
         </plugins>
     </build>
+ <dependencies>
+  	<dependency>
+    <groupId>org.webjars.npm</groupId>
+    <artifactId>ajv</artifactId>
+    <version>5.5.2</version>
+</dependency>
 
+  	<dependency>
+  		<groupId>org.postgresql</groupId>
+  		<artifactId>postgresql</artifactId>
+  		<version>42.3.3</version>
+  	</dependency>
+  	
+  	
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>8.0.16</version>
+	</dependency>
+  	
+  
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>javax.servlet-api</artifactId>
+  		<version>3.1.0</version>
+  	</dependency>
+  </dependencies>
 </project>
